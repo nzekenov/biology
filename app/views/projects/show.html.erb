@@ -1,11 +1,24 @@
-<div class="col-xs-12 col-md-9">
-    <%= image_tag @project.poster.url, :style=>"width: 100%;" %>
-</div>
-<div class="col-xs-12 col-md-3">
-    <%= image_tag @project.diplom.url, :style=>"width: 100%;" %>
-    <h2>
-    <%= link_to 'Cкачать', @project.slide.url, :class=>"btn btn-primary fon" %> <% if user_signed_in? && current_user.admin?%><%= link_to 'Удалить', project_path(@project),
+
+    <div class="col-xs-12 col-md-9">
+        <%= image_tag @project.poster.url, :class=>"diploma" %>
+        </div>
+        <div class="col-xs-12 col-md-3">
+             <h1>
+             <%= link_to 'Скачать файлы', @project.slide.url, :class=>"btn btn-primary fon" %>
+            <%= link_to 'Удалить', project_path(@project),
               method: :delete,
-              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-default fon" %><% end %>
-    </h2>
+              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-default fon" %></h1>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+       <% @project_attachments.each do |p| %>
+    <div class="item active">
+       <%= image_tag p.diplom_url, :class=>"diploma" %>
+    </div>
+    <% end %>
+  </div>
+        
 </div>
+           
+        </div>
+

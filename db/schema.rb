@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031021443) do
+ActiveRecord::Schema.define(version: 20171031150419) do
 
   create_table "books", force: :cascade do |t|
     t.text     "title"
@@ -43,15 +43,6 @@ ActiveRecord::Schema.define(version: 20171031021443) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "diploms", force: :cascade do |t|
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
 # Could not dump table "docs" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
 
@@ -69,8 +60,30 @@ ActiveRecord::Schema.define(version: 20171031021443) do
     t.datetime "updated_at",         null: false
   end
 
-# Could not dump table "projects" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "project_attachments", force: :cascade do |t|
+    t.integer  "project_id"
+    t.string   "diplom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.text     "title"
+    t.string   "slide_file_name"
+    t.string   "slide_content_type"
+    t.integer  "slide_file_size"
+    t.datetime "slide_updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "poster_file_name"
+    t.string   "poster_content_type"
+    t.integer  "poster_file_size"
+    t.datetime "poster_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

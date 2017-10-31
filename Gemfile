@@ -21,7 +21,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'jquery-rails'
 gem 'lodash-rails', '~> 4.17', '>= 4.17.4'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-
+gem 'carrierwave'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.

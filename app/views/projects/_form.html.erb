@@ -1,0 +1,28 @@
+<%= form_for(@project, :html => { :multipart => true }) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_area :title %>
+  </div>
+  <div class="field">
+    <%= f.label :slide %><br>
+    <%= f.file_field :slide %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+    <%= f.label :poster %><br>
+    <%= f.file_field :poster %>
+  </div>
+  <%= f.fields_for :project_attachments do |p| %>
+     <div class="field">
+       <%= p.label :diplom %><br>
+       <%= p.file_field :diplom, :multiple => true, name: "project_attachments[diplom][]" %>
+     </div>
+   <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

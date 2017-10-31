@@ -5,7 +5,16 @@
 .saya{
     max-height: 200px;
 }
+.diploma{
+    width: 100%;
+}
+.hei{
+    max-height: 300px;
+}
 .forma{
     margin-top: 20px;
+
+    
 }
+
 .btn-primary:visited { text-decoration: none; color:white; }

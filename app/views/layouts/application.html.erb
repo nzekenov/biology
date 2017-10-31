@@ -32,11 +32,11 @@
 				<li class="fon"><%= link_to "Проекты учащихся", projects_path%></li>
 				<li class="fon"><%= link_to "Материалы по биологии", docs_path%></li>
 				<li class="fon"><%= link_to "Курсы", courses_path %></li>
-				<li class="fon"><%= link_to "Исследования", researchs_path %></li>
+				<li class="fon"><%= link_to "Исследования в действии", researchs_path %></li>
 			</ul>
 			<div class="nav-other">
 				<span style="color:#fff; margin-right: 20px;" class=""><a class="text fon" style="a:visited{text-decoration: none; color: white;}
-				a:clicked{text-decoration: none; color: white;}" href="mailto:mukasheva_k@ukk.nis.edu.kz"><i class="glyphicon glyphicon-envelope"></i>  mukasheva_k@ukk.nis.edu.kz</a></span>
+				a:clicked{text-decoration: none; color: white;}" href="mailto:mukasheva_k@ukk.nis.edu.kz"><i class="glyphicon glyphicon-envelope"></i>  Написать</a></span>
 				<% if user_signed_in? %><%= link_to "Выйти", destroy_user_session_path, method: :delete, :class=>"btn btn-default btn-sm popup-trainingclass"%> <% end %>
 			</div>
 		</div><!-- /.nav -->

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :project_attachments
+  resources :projects
   get 'docs/index'
 
   get 'docs/new'
