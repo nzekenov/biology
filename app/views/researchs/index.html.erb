@@ -1,0 +1,53 @@
+<div class="container">
+<h1>Проекты <% if user_signed_in? && current_user.admin? %>
+<%= link_to 'Добавить что-то', new_research_path, :class=>"btn btn-primary fon" %>
+
+<% end %></h1>
+ <div class="row">
+     <h2>Постеры</h2>
+     <% @posters.each do |poster| %>
+  <div class="col-sm-12">
+    <div class="thumbnail thumbi">
+        <%= image_tag poster.image.url %>
+      <div class="caption">
+        <% if user_signed_in? && current_user.admin? %><%= link_to 'Удалить', poster_path(poster),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-default fon" %><% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+    <h2>Книги и сборники</h2>
+  <% @books.each do |book| %>
+  <div class="col-sm-12">
+    <div class="thumbnail thumbi">
+        <img class="col-sm-1 ph" src="https://image.flaticon.com/icons/svg/149/149345.svg" alt="...">
+      <div class="caption">
+           <h3 class="fon"><%= book.title %></h3>
+        <p><%= link_to 'Скачать', book.file.url, :class=>"btn btn-primary fon" %>
+        <% if user_signed_in? && current_user.admin? %><%= link_to 'Удалить', book_path(book),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-default fon" %><% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <h2>Сертификаты</h2>
+  <% @certificates.each do |certificate| %>
+  <div class="col-sm-12">
+    <div class="thumbnail thumbi">
+        <%= image_tag certificate.file.url %>
+      <div class="caption">
+        <% if user_signed_in? && current_user.admin? %><%= link_to 'Удалить', certificate_path(certificate),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-default fon" %><% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  
+</div>

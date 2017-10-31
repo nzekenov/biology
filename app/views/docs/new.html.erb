@@ -1,0 +1,15 @@
+<div class="container"><%= form_for @doc do |f| %>
+<br>
+  <div>
+    <%= f.label :Название_файла , :class=>"fon" %>
+    <%= f.text_field :name , :class=>"form-control" %>
+  </div>
+  <br>
+   <div>
+    <%= f.file_field :file ,  :class=>"btn btn-default fon"%>
+  </div>
+  <br>
+ 
+  <%= f.submit :Добавить , :class=>"btn btn-default fon" %>
+<% end %>
+</div>

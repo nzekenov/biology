@@ -1,0 +1,19 @@
+<div class="container"><%= form_for @course do |f| %>
+<br>
+  <div>
+    <%= f.label :Название_курса , :class=>"fon" %>
+    <%= f.text_field :title , :class=>"form-control" %>
+  </div>
+  <div>
+    <%= f.label :Описание , :class=>"fon" %>
+    <%= f.text_area :description , :class=>"form-control" %>
+  </div>
+  <br>
+   <div>
+    <%= f.file_field :file ,  :class=>"btn btn-default fon"%>
+  </div>
+  <br>
+ 
+  <%= f.submit :Добавить , :class=>"btn btn-default fon" %>
+<% end %>
+</div>

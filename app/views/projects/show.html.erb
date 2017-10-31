@@ -1,0 +1,11 @@
+<div class="col-xs-12 col-md-9">
+    <%= image_tag @project.poster.url, :style=>"width: 100%;" %>
+</div>
+<div class="col-xs-12 col-md-3">
+    <%= image_tag @project.diplom.url, :style=>"width: 100%;" %>
+    <h2>
+    <%= link_to 'Cкачать', @project.slide.url, :class=>"btn btn-primary fon" %> <% if user_signed_in? && current_user.admin?%><%= link_to 'Удалить', project_path(@project),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-default fon" %><% end %>
+    </h2>
+</div>

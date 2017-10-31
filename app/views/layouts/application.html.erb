@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head> <link rel="shortcut icon" href="http://indigoprint.kz/ph/NIS.png" type="image/png">
+  <title>Сайт Мукашевой Куралай</title>
+  <meta name="keywords" content="Материалы по биологии , Сайт учителя , Назарбаев Интеллектуальные школ">
+  <meta name="description" content="Сайт учителя Биолгии Назарбаев Интеллектуальной школы города Усть-Каменогорск" />
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "custom.js" %>
+    <%= javascript_include_tag "custom.js" %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "custom.css" %>
+</head>
+<body>
+<div id="page">
+
+<!-- Navigation -->
+<!-- /.nav-wrp --><!-- Intro -->
+<!-- /.intro-section --><!-- Navigation -->
+<nav class="nav-wrp nav-3 dark">
+	<div class="container">
+
+		<div class="nav-header">
+			<%= link_to image_tag("http://www.nis.edu.kz/media/nis.png"), root_path, :class=>"navbar-brand"%>
+			<a class="nav-handle fs-touch-element" data-nav=".nav"><i class="fa fa-bars" src=""></i></a>
+		</div>
+
+		<div class="nav vm-item">
+			<ul class="nav-links">
+			  
+				<li class="fon"><%= link_to "Обо мне", welcome_about_path%></li>
+				<li class="fon"><%= link_to "Проекты учащихся", projects_path%></li>
+				<li class="fon"><%= link_to "Материалы по биологии", docs_path%></li>
+				<li class="fon"><%= link_to "Курсы", courses_path %></li>
+				<li class="fon"><%= link_to "Исследования", researchs_path %></li>
+			</ul>
+			<div class="nav-other">
+				<span style="color:#fff; margin-right: 20px;" class=""><a class="text fon" style="a:visited{text-decoration: none; color: white;}
+				a:clicked{text-decoration: none; color: white;}" href="mailto:mukasheva_k@ukk.nis.edu.kz"><i class="glyphicon glyphicon-envelope"></i>  mukasheva_k@ukk.nis.edu.kz</a></span>
+				<% if user_signed_in? %><%= link_to "Выйти", destroy_user_session_path, method: :delete, :class=>"btn btn-default btn-sm popup-trainingclass"%> <% end %>
+			</div>
+		</div><!-- /.nav -->
+</div>
+</nav>
+<%= yield %>
+
+</div>
+</body>
+</html>

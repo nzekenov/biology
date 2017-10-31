@@ -1,0 +1,21 @@
+<div class="container">
+<h1>&nbsp Курсы: <% if user_signed_in? && current_user.admin?%>
+<%= link_to 'Добавить элективный курс', new_course_path, :class=>"btn btn-primary fon" %>
+<% end %></h1>
+
+<div class="row">
+    <% @courses.each do |course| %>
+  <div class="col-sm-12">
+    <div class="thumbnail">
+      <img class="col-sm-1 ph" src="https://image.flaticon.com/icons/svg/149/149345.svg" alt="...">
+      <div class="caption col-sm-11">
+        <h3 class="fon"><%= course.title %></h3>
+        <p><%= link_to 'Подробнее', course_path(course), :class=>"btn btn-primary fon" %> <%= link_to 'Скачать файлы', course.file.url, :class=>"btn btn-default fon" %> <% if user_signed_in? && current_user.admin?%><%= link_to 'Удалить', course_path(course),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-default fon" %><% end %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>

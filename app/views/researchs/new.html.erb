@@ -1,0 +1,35 @@
+<div class="container">
+<%= form_for @certificate do |f| %>
+<h1 class="fon">Добавить Сертификат</h1>
+  <div class="col-xs-12 col-md-4">
+    <%= f.file_field :file ,  :class=>"btn btn-default fon"%>
+  
+  <br>
+ 
+  <%= f.submit :Добавить , :class=>"btn btn-default fon" %>
+  </div>
+<% end %>
+<%= form_for @book do |d| %>
+<h1 class="fon">Добавить Книгу</h1>
+  <div class="col-xs-12 col-md-4">
+      <%= d.label :Название_книги , :class=>"fon" %>
+      <%= d.text_field :title , :class=>"form-control" %>
+    <%= d.file_field :file ,  :class=>"btn btn-default fon"%>
+  
+  <br>
+ 
+  <%= d.submit :Добавить , :class=>"btn btn-default fon" %>
+  </div >
+<% end %>
+<%= form_for @poster do |s| %>
+<h1 class="fon">Добавить Постер</h1>
+  <div class="col-xs-12 col-md-4">
+    <%= s.file_field :image ,  :class=>"btn btn-default fon"%>
+  
+  <br>
+ 
+  <%= s.submit :Добавить , :class=>"btn btn-default fon" %>
+  </div>
+<% end %>
+
+</div>

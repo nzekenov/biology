@@ -1,0 +1,21 @@
+<div class="container">
+<h1>&nbsp Документы: <% if user_signed_in? && current_user.admin?%>
+<%= link_to 'Добавить документ', new_doc_path, :class=>"btn btn-primary fon" %>
+<% end %></h1>
+
+<div class="row">
+    <% @docs.each do |doc| %>
+  <div class="col-sm-12">
+    <div class="thumbnail">
+      <img class="col-sm-1 ph" src="https://image.flaticon.com/icons/svg/149/149345.svg" alt="...">
+      <div class="caption col-sm-11">
+        <h3 class="fon"><%= doc.name %></h3>
+        <p><%= link_to 'Скачать', doc.file.url, :class=>"btn btn-primary fon" %> <% if user_signed_in? && current_user.admin?%><%= link_to 'Удалить', doc_path(doc),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-default fon" %><% end %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>

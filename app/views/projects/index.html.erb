@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>&nbsp Проекты: <% if user_signed_in? && current_user.admin?%>
+<%= link_to 'Добавить документ', new_project_path, :class=>"btn btn-primary fon" %>
+<% end %></h1>
+    <div class="row">
+        <% @projects.each do |project| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag project.avatar.url %>
+      <div class="caption">
+        <h3 class="fon"><%= project.title %></h3>
+        <p><p><%= link_to 'Подробнее', project_path(project), :class=>"btn btn-primary fon" %> <% if user_signed_in? && current_user.admin?%><%= link_to 'Удалить', project_path(project),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-default fon" %><% end %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>

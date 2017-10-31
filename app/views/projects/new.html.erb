@@ -1,0 +1,21 @@
+<div class="container">
+    <%= form_for @project, :html => { :multipart => true } do |p| %>
+<h1 class="fon">Добавить Проект</h1>
+  <div class="col-xs-12 col-md-4">
+      <%= p.label :Название_проекта , :class=>"fon" %>
+      <%= p.text_field :title , :class=>"form-control" %>
+      <%= p.label :Баннер , :class=>"fon" %>
+    <%= p.file_field :poster ,  :class=>"btn btn-default fon"%>
+    <%= p.label :Фото , :class=>"fon" %>
+    <%= p.file_field :avatar ,  :class=>"btn btn-default fon"%>
+   <%= p.label :Файл , :class=>"fon" %>
+    <%= p.file_field :slide ,  :class=>"btn btn-default fon"%>
+  
+ <%= p.label :Диплом , :class=>"fon" %>
+    <%= p.file_field :diplom ,  :class=>"btn btn-default fon"%>
+  
+  <br>
+ 
+  <%= p.submit :Добавить , :class=>"btn btn-default fon" %>
+  </div >
+<% end %>

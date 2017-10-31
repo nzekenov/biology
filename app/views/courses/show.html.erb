@@ -1,0 +1,22 @@
+   <div class="col-md-8 col-md-offset-2 forma">
+   <div class="col-md-4 col-sm-8">
+<p class="fon">
+ 
+  <strong>Название элективного курса:</strong>
+  <%= @courses.title %>
+</p>
+ <p class="fon">
+  <strong>Описание:</strong>
+  <%= @courses.description %>
+</p>
+<p class="fon">
+  <strong>Скачать материалы:</strong>
+  <%= link_to 'Скачать', @courses.file.url, :class=>"btn btn-primary fon" %>
+</p>
+
+<%= link_to 'Все курсы', courses_path, :class=>"btn btn-default fon" %>
+<% if user_signed_in? && current_user.admin? %><%= link_to 'Удалить', courses_path(@course),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' }, :class=>"btn btn-danger fon" %><% end %>
+              </div>
+              </div>
